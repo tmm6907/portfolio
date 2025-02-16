@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+    --color-primary: hsl(140, 100%, 35%);
+    --color-dark: hsl(140, 100%, 10%);
+    --color-dark-grey: hsla(140, 15%, 35%, 0.5);
+    --color-white: #EEE;
+    --color-light: hsla(140, 15%, 100%, 0.8);
+    --ff-primary: "Poppins", serif;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: var(--ff-primary);
+    color: var(--color-white);
+}
+
+p {
+    max-width: 65ch;
+}
+
+img,
+svg,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+@theme {
+    --color-primary: var(--color-primary);
+    --color-dark: var(--color-dark);
+    --color-dark-grey: var(--color-dark-grey);
+    --color-white: var(--color-white);
+    --color-light: var(--color-light);
+}
+
+.page-container {
+    background-color: var(--color-dark);
+}
+
+.logo-wrapper {
+    font-weight: 700;
+    letter-spacing: 1.15px;
+}
+
+
+.main-nav {
+    font-weight: 500;
+}
+
+.fab {
+    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-dark hover:border hover:border-primary transition duration-200 ease-in-out;
+}
+
+.btn {
+    padding: 0.5em 1em;
+}
+
+.skills h3 {
+    font-weight: 600;
+}
+
+.primary-skills>ul {
+    list-style: disc;
+    color: var(--color-primary);
+    font-weight: 600;
+
+    ul {
+        color: var(--color-white);
+        font-weight: 400;
+        list-style: circle;
+        @apply ml-4
+    }
+}
+
+.other-skills>ul {
+    list-style: disc;
+}
