@@ -10,6 +10,14 @@
     --ff-primary: "Poppins", serif;
 }
 
+@theme {
+    --color-primary: var(--color-primary) !important;
+    --color-dark: var(--color-dark);
+    --color-dark-grey: var(--color-dark-grey);
+    --color-white: var(--color-white);
+    --color-light: var(--color-light);
+}
+
 html,
 body {
     height: 100%;
@@ -28,13 +36,13 @@ picture {
     display: block;
 }
 
-@theme {
-    --color-primary: var(--color-primary);
-    --color-dark: var(--color-dark);
-    --color-dark-grey: var(--color-dark-grey);
-    --color-white: var(--color-white);
-    --color-light: var(--color-light);
+h2 {
+    --fw: 600;
+    font-weight: var(--fw);
+    @apply xl:text-6xl lg:text-4xl sm:text-4xl text-2xl;
 }
+
+
 
 .page-container {
     background-color: var(--color-dark);
@@ -51,10 +59,11 @@ picture {
 }
 
 .fab {
-    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-dark hover:border hover:border-primary transition duration-200 ease-in-out;
+    @apply fixed z-20 bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-dark hover:border hover:border-primary transition duration-200 ease-in-out;
 }
 
-.btn {
+.button {
+    /* not using tailwind to use ems instead */
     padding: 0.5em 1em;
 }
 
@@ -62,19 +71,6 @@ picture {
     font-weight: 600;
 }
 
-.primary-skills>ul {
-    list-style: disc;
-    color: var(--color-primary);
-    font-weight: 600;
-
-    ul {
-        color: var(--color-white);
-        font-weight: 400;
-        list-style: circle;
-        @apply ml-4
-    }
-}
-
-.other-skills>ul {
-    list-style: disc;
+.primary-skills>ul ul {
+    @apply ml-4
 }
